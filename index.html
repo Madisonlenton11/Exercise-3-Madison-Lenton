@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exercise 3 - Madison Lenton</title>
+    <meta charset="utf-8">
+
+    <script>
+        window.onload = function () {
+            var buttons = document.querySelectorAll('.myButton');
+            var imageDiv = document.getElementById('imageDiv');
+
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var img = document.createElement('img');
+                    img.src = button.dataset.image; // set image source
+
+                    imageDiv.innerHTML = ''; // remove any existing image
+                    imageDiv.appendChild(img); // add new image
+                });
+            });
+        };
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <button class="myButton" data-image="images/knight-visor-down.png">Visor Down</button>
+    <button class="myButton" data-image="images/knight-visor-up.png">Visor Up</button>
+    <button class="myButton" data-image="images/knight-in-love.png">Princess</button>
+    <button class="myButton" data-image="images/knight-guts.png">Cocky</button>
+    <button class="myButton" data-image="images/knight-burnt-up.png">Show Image 5</button>
+    <div id="imageDiv"></div>
+</body>
+
+</html>
